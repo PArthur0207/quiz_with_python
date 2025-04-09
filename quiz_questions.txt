@@ -1,42 +1,7 @@
-Question: 1 + 1 
-a.) 4 
-b.) 4 
-c.) 4 
-d.) 4 
-Answer: a 
------------------------- 
-Question: what is 1 + 1? 
-a.) 12 
-b.) 2 
-c.) 33 
-d.) 4 
-Answer: b 
------------------------- 
-Question: What is the value of pi? 
-a.) 12 
-b.) 3 
-c.) 3.14145 
-d.) i dont know 
-Answer: c 
------------------------- 
-Question: What is sin 90 deg? 
-a.) 1 
-b.) 0 
-c.) -1 
-d.) 2 
-Answer: a 
------------------------- 
-Question: Who invented calculus? 
-A.) Abraham lincoln 
-B.) Manny Pacquiao 
-C.) Isaac Newton 
-D.) Larry Bird 
-Answer: C 
------------------------- 
-Question: Who invented calculus? 
-A.) Abraham lincoln 
-B.) Manny Pacquiao 
-C.) Isaac Newton 
-D.) Larry Bird 
-Answer: C 
+Question: What is the formula for general relativity? 
+A.) e = Fa 
+B.) e = ma 
+C.) e = 1/2 fg 
+D.) e = mc^2 
+Answer: D 
 ------------------------ 

@@ -8,7 +8,16 @@ def save_question():
     option_b = entry_b.get()
     option_c = entry_c.get()
     option_d = entry_d.get()
-    answer = entry_answer.get()
+    answer = entry_answer.get().upper()
+
+    if not (question and option_a and option_b and option_c and option_d and answer):
+        status_label.config(text = "Please input all that is necessary", fg = 'red')
+        return
+    
+    valid_answers = ['A', 'B', 'C', 'D']
+    if answer not in valid_answers:
+        status_label.config(text = "Please input only A/B/C/D for the answer", fg = 'red')
+        return
 
     # Use append to add content to the quiz_questions.txt file, creates it if it doesn't exist yet
     quiz_file = open("quiz_questions.txt", "a")
@@ -25,9 +34,16 @@ def save_question():
     quiz_file.close()
 
     # Remove the inputtted labels from the grids
+    entry_question.delete(0, tk.END)
+    entry_a.delete(0, tk.END)
+    entry_b.delete(0, tk.END)
+    entry_c.delete(0, tk.END)
+    entry_d.delete(0, tk.END)
+    entry_answer.delete(0, tk.END)
+    status_label.config(text = "")
 
 def exit_program():
-    pass
+    base.destroy()
 
 # Make a base for the tkinter
 base = tk.Tk()
@@ -64,6 +80,7 @@ tk.Button(base, text = "Save Question", command = save_question).pack(pady = 5)
 # Add an exit input
 tk.Button(base, text = "Exit", command = exit_program).pack(pady = 5)
 
-# Add error handlings
+status_label = tk.Label(base, text = "")
+status_label.pack()
 
 base.mainloop()

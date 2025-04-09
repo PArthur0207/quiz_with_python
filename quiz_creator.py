@@ -1,6 +1,34 @@
 # Add wow factor (Tkinter inputs)
 import tkinter as tk
 
+# Functions for the buttons
+def save_question():
+    question = entry_question.get()
+    option_a = entry_a.get()
+    option_b = entry_b.get()
+    option_c = entry_c.get()
+    option_d = entry_d.get()
+    answer = entry_answer.get()
+
+    # Use append to add content to the quiz_questions.txt file, creates it if it doesn't exist yet
+    quiz_file = open("quiz_questions.txt", "a")
+    # Write the inputs to the quiz_questions.txt file
+    quiz_file.write(f"Question: {question} \n")
+    quiz_file.write(f"A.) {option_a} \n")
+    quiz_file.write(f"B.) {option_b} \n")
+    quiz_file.write(f"C.) {option_c} \n")
+    quiz_file.write(f"D.) {option_d} \n")
+    quiz_file.write(f"Answer: {answer} \n")
+    quiz_file.write("------------------------ \n")
+
+    # Close the text file
+    quiz_file.close()
+
+    # Remove the inputtted labels from the grids
+
+def exit_program():
+    pass
+
 # Make a base for the tkinter
 base = tk.Tk()
 base.title("Quiz Creator")
@@ -30,41 +58,12 @@ tk.Label(base, text = "Enter Correct Answer (A/B/C/D) here: ").pack()
 entry_answer = tk.Entry(base, width = 50)
 entry_answer.pack()
 
-
 # Add a save question button and its functions
+tk.Button(base, text = "Save Question", command = save_question).pack(pady = 5)
+
 # Add an exit input
+tk.Button(base, text = "Exit", command = exit_program).pack(pady = 5)
+
 # Add error handlings
 
 base.mainloop()
-
-def raw_program():
-    # Use append to add content to the quiz_questions.txt file, creates it if it doesn't exist yet
-    quiz_file = open("quiz_questions.txt", "a")
-
-    while True: # Loop all until the user don't want to input anymore
-        # Ask the question
-        question = input("Input your question \n>")
-
-        options = {} # Added the dictionary for seperating each letter option
-        # Ask for 4 options, make a dictionary for the options
-        for letter in ['a', 'b', 'c', 'd']:
-            choice = input(f"Input option {letter} \n>")
-            options[letter] = choice
-
-        # Ask for the answer from the options
-        answer = input("Input your answer here(a/b/c/d) \n>")
-
-        # Write the inputs to the quiz_questions.txt file
-        quiz_file.write(f"Question: {question} \n")
-        for letter in ['a', 'b', 'c', 'd']:
-            quiz_file.write(f"{letter}.) {options[letter]} \n")
-        quiz_file.write(f"Answer: {answer} \n")
-        quiz_file.write("------------------------ \n")
-
-        again = input("Would you like to input another question? Press 'y' if yes, press any other key if no: ")
-        if again != 'y':
-            print("Thank you for using this quiz creator")
-            break
-
-    # Close the file
-    quiz_file.close()

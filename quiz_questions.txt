@@ -26,3 +26,17 @@ c.) -1
 d.) 2 
 Answer: a 
 ------------------------ 
+Question: Who invented calculus? 
+A.) Abraham lincoln 
+B.) Manny Pacquiao 
+C.) Isaac Newton 
+D.) Larry Bird 
+Answer: C 
+------------------------ 
+Question: Who invented calculus? 
+A.) Abraham lincoln 
+B.) Manny Pacquiao 
+C.) Isaac Newton 
+D.) Larry Bird 
+Answer: C 
+------------------------ 

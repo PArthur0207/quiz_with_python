@@ -12,3 +12,17 @@ c.) 33
 d.) 4 
 Answer: b 
 ------------------------ 
+Question: What is the value of pi? 
+a.) 12 
+b.) 3 
+c.) 3.14145 
+d.) i dont know 
+Answer: c 
+------------------------ 
+Question: What is sin 90 deg? 
+a.) 1 
+b.) 0 
+c.) -1 
+d.) 2 
+Answer: a 
+------------------------ 

@@ -12,3 +12,38 @@ C.) Lex Luthor
 D.) Batman 
 Answer: A 
 ------------------------ 
+Question: What does OOP stands for? 
+A.) Overly Obese Person 
+B.) Object Oriented Programming 
+C.) Obviously Orange Pear 
+D.) All of the above 
+Answer: D 
+------------------------ 
+Question: What language is this? 
+A.) Python 
+B.) English 
+C.) Human 
+D.) All of the above 
+Answer: D 
+------------------------ 
+Question: What is sin 90 degreea equal to? 
+A.) 1 
+B.) 0 
+C.) pi 
+D.) 90 
+Answer: D 
+------------------------ 
+Question: Who invented calculus? 
+A.) Isaac Newton 
+B.) Uzumaki Naruto 
+C.) Adolf Hitler 
+D.) Eminem 
+Answer: A 
+------------------------ 
+Question: What color is the ocean? 
+A.) Blue 
+B.) Purple 
+C.) Red 
+D.) Black 
+Answer: A 
+------------------------ 

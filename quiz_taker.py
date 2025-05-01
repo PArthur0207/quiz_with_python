@@ -49,6 +49,12 @@ def load_questions():
 def answered(answer):
     global current_index, score
     
+    #Disables option buttons after pressing once
+    button_a.config(state = "disabled")
+    button_b.config(state = "disabled")
+    button_c.config(state = "disabled")
+    button_d.config(state = "disabled")
+    
     the_question = quiz_order[current_index]
     
     correct_answer = reader[the_question + 5].split(":")[1].strip()
@@ -59,8 +65,20 @@ def answered(answer):
     else:
         feedback_label.config(text = "Wrong :( ")
         
+    # Only shows next button after answering
+    next_button.pack(pady = 5)
+        
 def next():
     global current_index
+    
+    # Enables buttons again after pressing next
+    button_a.config(state = "normal")
+    button_b.config(state = "normal")
+    button_c.config(state = "normal")
+    button_d.config(state = "normal")
+    
+    # Next button hides again
+    next_button.pack_forget()
     
     current_index += 1
     load_questions()
@@ -105,7 +123,6 @@ button_d.pack(side = "left", padx = 5)
 
 #On to the next question button
 next_button = tk.Button(base, text = "Next", command = next)
-next_button.pack(pady = 5)
 
 # Exit Button
 tk.Button(base, text = "Exit", command = base.quit).pack(pady = 5)

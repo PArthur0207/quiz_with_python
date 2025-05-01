@@ -34,6 +34,7 @@ def load_questions():
         option_c.config(text = "out of")
         option_d.config(text = quiz_length)
         feedback_label.config(text = "Press Exit to end program")
+        take_again.pack(pady = 5)
         
         return
 
@@ -77,12 +78,29 @@ def next():
     button_c.config(state = "normal")
     button_d.config(state = "normal")
     
+    feedback_label.config(text = "")
+    
     # Next button hides again
     next_button.pack_forget()
     
     current_index += 1
     load_questions()
 
+def restart():
+    global current_index, score
+    
+    # Re shuffles the order so that it is random again
+    random.shuffle(quiz_order)
+    
+    # Resets current_index and score
+    current_index = 0
+    score = 0
+    
+    load_questions()
+    
+    # Hides the button again
+    take_again.pack_forget()
+    
 base = tk.Tk()
 base.title("Quiz_taker")
 
@@ -123,6 +141,9 @@ button_d.pack(side = "left", padx = 5)
 
 #On to the next question button
 next_button = tk.Button(base, text = "Next", command = next)
+
+# Take the quiz again button
+take_again = tk.Button(base, text ="Take again", command = restart)
 
 # Exit Button
 tk.Button(base, text = "Exit", command = base.quit).pack(pady = 5)

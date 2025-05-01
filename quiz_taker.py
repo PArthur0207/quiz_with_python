@@ -12,7 +12,9 @@ quiz_length = len(reader)  // 7
 quiz_order = []
 question_start = 0
 
+# Necessary variables
 score = 0
+current_index = 0
 
 for i in range(quiz_length):
     quiz_order.append(question_start)
@@ -21,14 +23,26 @@ for i in range(quiz_length):
 # Randomly pick a question from the file
 random.shuffle(quiz_order)
 
+# Load question functions
+def load_questions():
+    global current_index
+    
+    the_question = quiz_order[current_index]
+    
+    question_label.config(text = reader[the_question])
+    option_a.config(text = reader[the_question + 1])
+    option_b.config(text = reader[the_question + 2])
+    option_c.config(text = reader[the_question + 3])
+    option_d.config(text = reader[the_question + 4])
+
 #Button functions
 def answered(answer):
-    pass
+    feedback_label.config(text = "You answered " + answer)
 
 base = tk.Tk()
 base.title("Quiz_taker")
 
-# The texts in these labels will be configurated later
+# The texts in these labels will be configurated whike the code is running
 question_label = tk.Label(base, text = "Hello I am a question", wraplength = 800, font = ("Arial", 10))
 question_label.pack(pady = 10)
 
@@ -66,4 +80,5 @@ button_d.pack(side = "left", padx = 5)
 # Exit Button
 tk.Button(base, text = "Exit", command = base.quit).pack(pady = 5)
 
+load_questions()
 base.mainloop()

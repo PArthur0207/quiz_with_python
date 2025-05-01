@@ -27,6 +27,16 @@ random.shuffle(quiz_order)
 def load_questions():
     global current_index
     
+    if current_index >= quiz_length:
+        question_label.config(text = "Quiz is Over!")
+        option_a.config(text = "You scored")
+        option_b.config(text = score)
+        option_c.config(text = "out of")
+        option_d.config(text = quiz_length)
+        feedback_label.config(text = "Press Exit to end program")
+        
+        return
+
     the_question = quiz_order[current_index]
     
     question_label.config(text = reader[the_question])
@@ -48,6 +58,10 @@ def answered(answer):
         score += 1
     else:
         feedback_label.config(text = "Wrong :( ")
+        
+    # On to the next question
+    current_index += 1
+    load_questions()
 
 base = tk.Tk()
 base.title("Quiz_taker")

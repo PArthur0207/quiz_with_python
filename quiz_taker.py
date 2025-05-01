@@ -37,7 +37,17 @@ def load_questions():
 
 #Button functions
 def answered(answer):
-    feedback_label.config(text = "You answered " + answer)
+    global current_index, score
+    
+    the_question = quiz_order[current_index]
+    
+    correct_answer = reader[the_question + 5].split(":")[1].strip()
+    
+    if answer == correct_answer:
+        feedback_label.config(text = "Correct!!")
+        score += 1
+    else:
+        feedback_label.config(text = "Wrong :( ")
 
 base = tk.Tk()
 base.title("Quiz_taker")

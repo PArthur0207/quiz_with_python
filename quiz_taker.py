@@ -34,6 +34,11 @@ def load_questions():
         option_c.config(text = "out of")
         option_d.config(text = quiz_length)
         feedback_label.config(text = "Press Exit to end program")
+        button_a.config(state = "disabled")
+        button_b.config(state = "disabled")
+        button_c.config(state = "disabled")
+        button_d.config(state = "disabled")
+    
         take_again.pack(pady = 5)
         
         return
@@ -95,6 +100,11 @@ def restart():
     # Resets current_index and score
     current_index = 0
     score = 0
+    
+    button_a.config(state = "normal")
+    button_b.config(state = "normal")
+    button_c.config(state = "normal")
+    button_d.config(state = "normal")
     
     load_questions()
     

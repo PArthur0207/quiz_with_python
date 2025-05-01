@@ -59,7 +59,9 @@ def answered(answer):
     else:
         feedback_label.config(text = "Wrong :( ")
         
-    # On to the next question
+def next():
+    global current_index
+    
     current_index += 1
     load_questions()
 
@@ -100,6 +102,10 @@ button_c.pack(side = "left", padx = 5)
 
 button_d = tk.Button(button_frame, text = "D", command = lambda: answered("D"))
 button_d.pack(side = "left", padx = 5)
+
+#On to the next question button
+next_button = tk.Button(base, text = "Next", command = next)
+next_button.pack(pady = 5)
 
 # Exit Button
 tk.Button(base, text = "Exit", command = base.quit).pack(pady = 5)
